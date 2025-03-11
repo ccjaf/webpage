@@ -63,12 +63,6 @@ export default function Header() {
             <NavLink href="/galeria" onClick={() => setIsOpen(false)}>
               Galería
             </NavLink>
-            <NavLink href="/testimonios" onClick={() => setIsOpen(false)}>
-              Testimonios
-            </NavLink>
-            <NavLink href="/blog" onClick={() => setIsOpen(false)}>
-              Blog
-            </NavLink>
             <NavLink href="/contacto" onClick={() => setIsOpen(false)}>
               Contacto
             </NavLink>
