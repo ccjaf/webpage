@@ -22,6 +22,7 @@ export default function Header() {
           <NavLink href="/eventos">Eventos</NavLink>
           <NavLink href="/galeria">Galería</NavLink>
           <NavLink href="/contacto">Contacto</NavLink>
+          <NavLink href="/legal">Legal</NavLink>
         </nav>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <svg
@@ -65,6 +66,9 @@ export default function Header() {
             </NavLink>
             <NavLink href="/contacto" onClick={() => setIsOpen(false)}>
               Contacto
+            </NavLink>
+            <NavLink href="/legal" onClick={() => setIsOpen(false)}>
+              Legal
             </NavLink>
           </div>
         </motion.nav>

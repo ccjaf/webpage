@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { MapPin, Phone, Mail } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData)
+    e.preventDefault();
     // Resetear el formulario
-    setFormData({ name: "", email: "", message: "" })
-  }
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -104,19 +104,21 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <h2 className="text-2xl font-semibold mb-4">Información de contacto</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            Información de contacto
+          </h2>
           <div className="space-y-4">
             <div className="flex items-center">
               <MapPin className="mr-2 text-yellow-500" />
-              <p>Calle Principal 123, Ciudad, País</p>
+              <p>Neiva - Huila</p>
             </div>
             <div className="flex items-center">
               <Phone className="mr-2 text-yellow-500" />
-              <p>+1 234 567 890</p>
+              <p>+57 8 4 567 890</p>
             </div>
             <div className="flex items-center">
               <Mail className="mr-2 text-yellow-500" />
-              <p>info@ccjaf.com</p>
+              <p>corpofolclore@gmail.com</p>
             </div>
           </div>
 
@@ -124,7 +126,8 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-2">Ubicación</h3>
             <div className="aspect-w-16 aspect-h-9">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8101263330436!2d-74.07715908523785!3d4.639976443493215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2f2f89f6c3%3A0x6a8f2f2f2f2f2f2f!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                title="Ubicación"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63753.206343518985!2d-75.31358812601053!3d2.937618641866955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b747c5a6b4009%3A0x69acf162bb25539a!2sNeiva%2C%20Huila!5e0!3m2!1ses!2sco!4v1754252670995!5m2!1ses!2sco"
                 width="600"
                 height="450"
                 style={{ border: 0 }}
@@ -137,6 +140,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
