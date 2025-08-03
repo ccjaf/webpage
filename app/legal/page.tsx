@@ -19,13 +19,6 @@ export default function Legal() {
         setLoadedDocuments(files);
       })
       .finally(() => setIsLoading(false));
-    // Simular una carga de datos asíncrona
-    // const timer = setTimeout(() => {
-    //   setLoadedDocuments(documents); // Cargar los documentos después de un retraso
-    //   setIsLoading(false); // Desactivar el estado de carga
-    // }, 1500); // Simula 1.5 segundos de carga
-
-    // return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
   }, []);
 
   return (
