@@ -84,7 +84,7 @@ export default function Footer() {
         <div className="mt-8 text-center text-sm">
           <p>
             &copy; {new Date().getFullYear()} Corporación Cultural Juventud Arte
-            y Folclor. Todos los derechos reservados.
+            y Folclore. Todos los derechos reservados.
           </p>
         </div>
       </div>
