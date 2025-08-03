@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="w-full  mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-2">
-              Corporación Cultural Juventud Arte y Folclor ONG
+              Corporación Cultural Juventud Arte y Folclor - ONG
             </h3>
             <p className="text-sm">
               Preservando la tradición, celebrando la cultura, inspirando el

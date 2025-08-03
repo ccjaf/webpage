@@ -39,7 +39,7 @@ export default function Home() {
         transition={{ duration: 1 }}
         className="text-4xl md:text-6xl font-bold text-center mb-4"
       >
-        Corporación Cultural Juventud Arte y Folclor ONG
+        Corporación Cultural Juventud Arte y Folclor - ONG
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}

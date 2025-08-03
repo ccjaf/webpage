@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Corporación Cultural Juventud Arte y Folclor ONG",
+  title: "Corporación Cultural Juventud Arte y Folclor - ONG",
   description:
     "Preservamos la tradición, celebramos la cultura, inspiramos el futuro.",
 };

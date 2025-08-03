@@ -23,7 +23,7 @@ export default function AboutUs() {
         >
           <h2 className="text-2xl font-semibold mb-4">Nuestra Historia</h2>
           <p className="mb-4">
-            La Corporación Cultural Juventud Arte y Folclor ONG nació en 2004
+            La Corporación Cultural Juventud Arte y Folclor - ONG nació en 2004
             con el objetivo de preservar y promover las tradiciones culturales
             de nuestra región. Desde entonces, hemos crecido para convertirnos
             en un referente en la organización de eventos culturales y la
