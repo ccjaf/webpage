@@ -1,28 +1,22 @@
-name: Supabase Keep Alive
+# .github/workflows/supabase-keep-alive.yml
+name: Supabase Keep Alive (Storage only)
 
 on:
   schedule:
-    - cron: "0 9 * * *"  # Diario 09:00 UTC (4:00 a.m. Bogotá aprox.)
+    - cron: "0 9 * * *"  # Diario 09:00 UTC (~04:00 Bogotá)
   workflow_dispatch:
 
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Auth health (público, sin llaves)
-        run: |
-          set -e
-          URL="https://nlcsvhphledtlmgwfoaj.supabase.co/auth/v1/health"
-          CODE=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 15 "$URL" || echo "000")
-          echo "Auth health HTTP: $CODE"
-          test "$CODE" -ge 200 -a "$CODE" -lt 300
-
-      - name: Ping Storage list (requiere llaves)
+      - name: Ping Supabase Storage list (requiere llaves)
         env:
           URL: ${{ secrets.SUPABASE_STORAGE_LIST_URL }}
           APIKEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          # POST obligatorio; con body mínimo. No imprimimos respuesta para no exponer nada.
+          set -e
+          echo "Hitting $URL ..."
           ATTEMPTS=0
           while [ $ATTEMPTS -lt 3 ]; do
             ATTEMPTS=$((ATTEMPTS+1))
@@ -33,9 +27,9 @@ jobs:
               -H "Authorization: Bearer $APIKEY" \
               --data '{"prefix":"","limit":1}' \
               --max-time 20 || echo "000")
-            echo "Storage list HTTP (try $ATTEMPTS): $CODE"
-            # Éxito si 2xx o 404 (404 = bucket no existe -> igual genera actividad)
-            if [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ] || [ "$CODE" -eq 404 ]; then
+            echo "Try #$ATTEMPTS → HTTP $CODE"
+            # Éxito si 2xx o 404 (404 = bucket no existe; igual genera actividad)
+            if { [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ]; } || [ "$CODE" -eq 404 ]; then
               exit 0
             fi
             sleep 5
